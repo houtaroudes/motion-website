@@ -538,7 +538,7 @@ a {
 .scroll-line {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(to bottom, var(--text-muted-3), transparent);
   overflow: hidden;
   position: relative;
 }
@@ -1357,7 +1357,7 @@ a {
 .tilt-card h3 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-secondary);
   margin-bottom: 0.75rem;
   transform: translateZ(20px);
 }
