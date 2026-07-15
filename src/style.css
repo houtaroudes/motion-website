@@ -20,7 +20,6 @@ body {
   background: #0a0a0f;
   color: #e8e8ed;
   overflow-x: hidden;
-  cursor: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -57,17 +56,16 @@ a {
 /* === CUSTOM CURSOR === */
 .cursor-follower {
   position: fixed;
-  width: 20px;
-  height: 20px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  background: rgba(99, 102, 241, 0.3);
-  border: 1px solid rgba(99, 102, 241, 0.5);
+  background: #818cf8;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.5), 0 0 30px rgba(99, 102, 241, 0.2);
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, background 0.3s;
-  mix-blend-mode: screen;
-  backdrop-filter: blur(2px);
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  mix-blend-mode: normal;
 }
 
 /* === NAVIGATION === */
@@ -232,7 +230,6 @@ a {
   font-weight: 600;
   font-size: 0.95rem;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: none;
   position: relative;
   overflow: hidden;
 }
@@ -893,7 +890,6 @@ a {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  cursor: none;
 }
 
 .mask-frame {
@@ -981,7 +977,6 @@ a {
   text-align: center;
   transition: transform 0.1s ease;
   transform-style: preserve-3d;
-  cursor: none;
   position: relative;
   overflow: hidden;
 }
