@@ -43,6 +43,11 @@
       <a href="#masking" class="mobile-link">Masking</a>
       <a href="#tilt" class="mobile-link">3D</a>
       <a href="#showcase" class="mobile-link">Showcase</a>
+      <button class="theme-toggle mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle theme">
+        <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <span>Toggle Theme</span>
+      </button>
     </div>
   </div>
 
@@ -295,7 +300,12 @@
       <div class="tilt-grid">
         <div class="tilt-card" data-scroll data-tilt>
           <div class="tilt-inner">
-            <div class="tilt-icon">🌊</div>
+            <div class="tilt-visual fluid-visual">
+              <div class="fluid-ring-container r1"></div>
+              <div class="fluid-ring-container r2"></div>
+              <div class="fluid-ring-container r3"></div>
+              <div class="fluid-core"></div>
+            </div>
             <h3>Fluid Motion</h3>
             <p>Continuous flowing movement with organic curves and smooth transitions</p>
             <div class="tilt-shine"></div>
@@ -303,7 +313,19 @@
         </div>
         <div class="tilt-card" data-scroll data-tilt>
           <div class="tilt-inner">
-            <div class="tilt-icon">⚡</div>
+            <div class="tilt-visual kinetic-visual">
+              <div class="kinetic-core"></div>
+              <div class="kinetic-orbit o1">
+                <div class="kinetic-dot"></div>
+              </div>
+              <div class="kinetic-orbit o2">
+                <div class="kinetic-dot"></div>
+              </div>
+              <div class="kinetic-orbit o3">
+                <div class="kinetic-dot"></div>
+              </div>
+              <div class="kinetic-pulse"></div>
+            </div>
             <h3>Kinetic Energy</h3>
             <p>Dynamic bursts of motion that convey power and momentum in design</p>
             <div class="tilt-shine"></div>
@@ -311,7 +333,17 @@
         </div>
         <div class="tilt-card" data-scroll data-tilt>
           <div class="tilt-inner">
-            <div class="tilt-icon">🌀</div>
+            <div class="tilt-visual spiral-visual">
+              <div class="spiral-layer" style="--i: 0; --rot: 0deg; --delay: 0s;"></div>
+              <div class="spiral-layer" style="--i: 1; --rot: 45deg; --delay: 0.15s;"></div>
+              <div class="spiral-layer" style="--i: 2; --rot: 90deg; --delay: 0.3s;"></div>
+              <div class="spiral-layer" style="--i: 3; --rot: 135deg; --delay: 0.45s;"></div>
+              <div class="spiral-layer" style="--i: 4; --rot: 180deg; --delay: 0.6s;"></div>
+              <div class="spiral-layer" style="--i: 5; --rot: 225deg; --delay: 0.75s;"></div>
+              <div class="spiral-layer" style="--i: 6; --rot: 270deg; --delay: 0.9s;"></div>
+              <div class="spiral-layer" style="--i: 7; --rot: 315deg; --delay: 1.05s;"></div>
+              <div class="spiral-core"></div>
+            </div>
             <h3>Spiral Dynamics</h3>
             <p>Rotational movement creating hypnotic patterns with depth perception</p>
             <div class="tilt-shine"></div>

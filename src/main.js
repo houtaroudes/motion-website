@@ -1,15 +1,12 @@
 import './style.css';
 
-/* ============================================
-   MOTION — Main JavaScript
-   All interactive effects & animations
-   ============================================ */
+// JavaScript for all the animations and interactions
 
-// === UTILITY FUNCTIONS ===
+// Helper functions
 const lerp = (a, b, t) => a + (b - a) * t;
 const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
 
-// === CUSTOM CURSOR ===
+// Custom cursor that follows your mouse
 const cursor = document.getElementById('cursorFollower');
 let cursorX = -100, cursorY = -100;
 let currentX = -100, currentY = -100;
@@ -55,7 +52,7 @@ interactiveElements.forEach((el) => {
   });
 });
 
-// === SCROLL REVEAL (Intersection Observer) ===
+// Show elements when they scroll into view
 function initScrollReveal() {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -83,18 +80,18 @@ function initScrollReveal() {
 }
 initScrollReveal();
 
-// === NAVIGATION ===
+// Navbar
 const navbar = document.getElementById('navbar');
 const mobileBtn = document.getElementById('mobileMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobileLinks = document.querySelectorAll('.mobile-link');
 
-// Scroll effect
+// Change navbar style on scroll
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// Mobile menu toggle
+// Open/close mobile menu
 mobileBtn.addEventListener('click', () => {
   mobileBtn.classList.toggle('active');
   mobileMenu.classList.toggle('open');
@@ -109,7 +106,7 @@ mobileLinks.forEach((link) => {
   });
 });
 
-// Active nav link on scroll
+// Highlight active section in navbar
 function updateActiveNav() {
   const sections = document.querySelectorAll('.section, .hero');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -130,7 +127,7 @@ function updateActiveNav() {
 
 window.addEventListener('scroll', updateActiveNav);
 
-// === PARALLAX EFFECT ===
+// Parallax scrolling effect
 function initParallax() {
   const stage = document.querySelector('.parallax-stage');
   if (!stage) return;
@@ -142,7 +139,7 @@ function initParallax() {
     const rect = stage.getBoundingClientRect();
     const windowHeight = window.innerHeight;
     
-    // Calculate how far the section is through the viewport
+    // How far down the page we are
     const sectionProgress = 1 - (rect.top + rect.height / 2) / (windowHeight + rect.height);
     scrollProgress = clamp(sectionProgress, 0, 1);
 
@@ -155,7 +152,7 @@ function initParallax() {
 }
 initParallax();
 
-// === 3D TILT EFFECT ===
+// 3D tilt effect on hover
 function initTilt() {
   const tiltCards = document.querySelectorAll('[data-tilt]');
 
@@ -190,7 +187,7 @@ function initTilt() {
 }
 initTilt();
 
-// === EASING CARDS MOUSE TRACKING ===
+// Track mouse position on easing cards
 const easingCards = document.querySelectorAll('.easing-card');
 easingCards.forEach((card) => {
   card.addEventListener('mousemove', (e) => {
@@ -202,7 +199,7 @@ easingCards.forEach((card) => {
   });
 });
 
-// === EASING BALL ANIMATIONS ===
+// Animate balls on easing cards
 function initEasingBalls() {
   const easingObserver = new IntersectionObserver(
     (entries) => {
@@ -229,7 +226,7 @@ function initEasingBalls() {
 }
 initEasingBalls();
 
-// === MORPH SHAPES ===
+// Morphing shape animations
 function initMorphShapes() {
   const morphShapes = document.querySelectorAll('[data-morph]');
   if (!morphShapes.length) return;
@@ -240,7 +237,7 @@ function initMorphShapes() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Start morphing when visible
+          // Start morphing
           if (!morphInterval) {
             morphInterval = setInterval(() => {
               morphShapes.forEach((shape) => {
@@ -249,7 +246,7 @@ function initMorphShapes() {
             }, 2500);
           }
         } else {
-          // Stop morphing when not visible
+          // Stop morphing
           if (morphInterval) {
             clearInterval(morphInterval);
             morphInterval = null;
@@ -260,7 +257,7 @@ function initMorphShapes() {
     { threshold: 0.2 }
   );
   
-  // Observe the parent section or a nearby element
+  // Watch the section
   const morphSection = document.querySelector('#transform .morph-grid');
   if (morphSection) {
     morphObserver.observe(morphSection);
@@ -268,7 +265,7 @@ function initMorphShapes() {
 }
 initMorphShapes();
 
-// === COUNTER ANIMATIONS ===
+// Animated number counters
 function initCounters() {
   const counters = document.querySelectorAll('[data-count]');
   
@@ -286,7 +283,7 @@ function initCounters() {
             const elapsed = currentTime - start;
             const progress = Math.min(elapsed / duration, 1);
             
-            // Ease out cubic
+            // Smooth animation
             const eased = 1 - Math.pow(1 - progress, 3);
             const current = Math.round(eased * target);
             
@@ -309,7 +306,7 @@ function initCounters() {
 }
 initCounters();
 
-// === HERO PARTICLES ===
+// Floating particles in hero section
 function initParticles() {
   const container = document.getElementById('heroParticles');
   if (!container) return;
@@ -340,7 +337,7 @@ function initParticles() {
 }
 initParticles();
 
-// === SMOOTH ANCHOR SCROLLING ===
+// Smooth scrolling for links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', (e) => {
     e.preventDefault();
@@ -357,8 +354,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// === CARDS INTERSECTION OBSERVER FOR EASING CARDS ===
-// (Separated from the main reveal for stagger timing)
+// Show cards when they appear
+// Separate from main scroll for stagger effect
 function initCardReveal() {
   const cardObserver = new IntersectionObserver(
     (entries) => {
@@ -379,7 +376,7 @@ function initCardReveal() {
 }
 initCardReveal();
 
-// === SCROLL PROGRESS BAR (if you want to add one) ===
+// Progress bar at the top of the page
 function initProgressBar() {
   const bar = document.createElement('div');
   bar.style.cssText = `
@@ -401,6 +398,29 @@ function initProgressBar() {
 }
 initProgressBar();
 
-// === LOG ===
+// Just a friendly message
 console.log('✦ Motion — Animation Showcase loaded');
 console.log('Crafted with care, animated with purpose.');
+// Dark/light theme toggle
+function initThemeToggle() {
+  const toggleBtn = document.getElementById("themeToggle");
+  const mobileToggle = document.getElementById("mobileThemeToggle");
+  const storedTheme = localStorage.getItem("theme");
+  const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+  const initialTheme = storedTheme || (prefersLight ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", initialTheme);
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    toggleBtn.style.transform = "scale(0.85)";
+    setTimeout(() => { toggleBtn.style.transform = ""; }, 200);
+  }
+  toggleBtn.addEventListener("click", toggleTheme);
+  if (mobileToggle) {
+    mobileToggle.addEventListener("click", toggleTheme);
+  }
+}
+initThemeToggle();
+
