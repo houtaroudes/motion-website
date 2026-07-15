@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motion — Interactive Animation Showcase</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- === NAVIGATION === -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Motion</span>
+      </a>
+      <div class="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#easing" class="nav-link">Easing</a>
+        <a href="#parallax" class="nav-link">Parallax</a>
+        <a href="#transform" class="nav-link">Transform</a>
+        <a href="#masking" class="nav-link">Masking</a>
+        <a href="#tilt" class="nav-link">3D</a>
+        <a href="#showcase" class="nav-link">Showcase</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- === MOBILE MENU === -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="#hero" class="mobile-link">Home</a>
+      <a href="#easing" class="mobile-link">Easing</a>
+      <a href="#parallax" class="mobile-link">Parallax</a>
+      <a href="#transform" class="mobile-link">Transform</a>
+      <a href="#masking" class="mobile-link">Masking</a>
+      <a href="#tilt" class="mobile-link">3D</a>
+      <a href="#showcase" class="mobile-link">Showcase</a>
+    </div>
+  </div>
+
+  <!-- === HERO SECTION === -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="gradient-sphere sphere-1"></div>
+      <div class="gradient-sphere sphere-2"></div>
+      <div class="gradient-sphere sphere-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    
+    <div class="hero-particles" id="heroParticles"></div>
+    
+    <div class="hero-content">
+      <div class="hero-badge" data-reveal>
+        <span class="badge-dot"></span>
+        Interactive Animation
+      </div>
+      
+      <h1 class="hero-title" data-reveal>
+        <span class="title-line">Where Motion</span>
+        <span class="title-line accent">Meets Design</span>
+      </h1>
+      
+      <p class="hero-subtitle" data-reveal>
+        A visual exploration of animation principles — easing, parallax, 
+        transformation, and 3D dimensionality — crafted to inspire.
+      </p>
+      
+      <div class="hero-actions" data-reveal>
+        <a href="#easing" class="btn btn-primary">
+          Explore Principles
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#showcase" class="btn btn-secondary">
+          View Showcase
+        </a>
+      </div>
+      
+      <div class="scroll-indicator" data-reveal>
+        <span>Scroll to explore</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === EASING SECTION === -->
+  <section class="section" id="easing">
+    <div class="section-bg"></div>
+    <div class="container">
+      <div class="section-header" data-scroll>
+        <span class="section-number">01</span>
+        <h2 class="section-title">Easing & Timing</h2>
+        <p class="section-desc">The foundation of natural motion. Easing defines how objects accelerate and decelerate, bringing life and personality to every interaction.</p>
+      </div>
+      
+      <div class="easing-grid">
+        <div class="easing-card" data-scroll data-easing="linear">
+          <div class="easing-visual">
+            <div class="easing-ball"></div>
+            <div class="easing-track"></div>
+          </div>
+          <h3>Linear</h3>
+          <p>Constant speed, robotic feel</p>
+        </div>
+        
+        <div class="easing-card" data-scroll data-easing="ease-out">
+          <div class="easing-visual">
+            <div class="easing-ball"></div>
+            <div class="easing-track"></div>
+          </div>
+          <h3>Ease Out</h3>
+          <p>Natural deceleration, organic</p>
+        </div>
+        
+        <div class="easing-card" data-scroll data-easing="ease-in-out">
+          <div class="easing-visual">
+            <div class="easing-ball"></div>
+            <div class="easing-track"></div>
+          </div>
+          <h3>Ease In-Out</h3>
+          <p>Smooth start and finish</p>
+        </div>
+        
+        <div class="easing-card" data-scroll data-easing="bounce">
+          <div class="easing-visual">
+            <div class="easing-ball"></div>
+            <div class="easing-track"></div>
+          </div>
+          <h3>Bounce</h3>
+          <p>Playful energy, bouncy</p>
+        </div>
+        
+        <div class="easing-card" data-scroll data-easing="spring">
+          <div class="easing-visual">
+            <div class="easing-ball"></div>
+            <div class="easing-track"></div>
+          </div>
+          <h3>Spring</h3>
+          <p>Elastic overshoot effect</p>
+        </div>
+        
+        <div class="easing-card" data-scroll data-easing="cubic">
+          <div class="easing-visual">
+            <div class="easing-ball"></div>
+            <div class="easing-track"></div>
+          </div>
+          <h3>Cubic Bezier</h3>
+          <p>Custom crafted curves</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === PARALLAX SECTION === -->
+  <section class="section parallax-section" id="parallax">
+    <div class="container">
+      <div class="section-header" data-scroll>
+        <span class="section-number">02</span>
+        <h2 class="section-title">Depth & Parallax</h2>
+        <p class="section-desc">Layers of motion at different speeds create an illusion of depth. Watch how foreground and background elements move independently.</p>
+      </div>
+      
+      <div class="parallax-stage" data-scroll>
+        <div class="parallax-layer layer-deep" data-speed="0.1">
+          <div class="parallax-shape shape-distant"></div>
+        </div>
+        <div class="parallax-layer layer-mid" data-speed="0.3">
+          <div class="parallax-shape shape-mid"></div>
+        </div>
+        <div class="parallax-layer layer-near" data-speed="0.6">
+          <div class="parallax-shape shape-near"></div>
+        </div>
+        <div class="parallax-layer layer-close" data-speed="0.9">
+          <div class="parallax-shape shape-close"></div>
+        </div>
+        <div class="parallax-content">
+          <h3>Motion Creates Depth</h3>
+          <p>Objects closer to you move faster than those far away — a principle borrowed from the real world.</p>
+          <div class="parallax-stats">
+            <div class="stat-item">
+              <span class="stat-num" data-count="4">0</span>
+              <span class="stat-label">Layers</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-count="3">0</span>
+              <span class="stat-label">Dimensions</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-count="100">0</span>
+              <span class="stat-label">% Immersive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === TRANSFORM & MORPH SECTION === -->
+  <section class="section" id="transform">
+    <div class="container">
+      <div class="section-header" data-scroll>
+        <span class="section-number">03</span>
+        <h2 class="section-title">Transform & Morph</h2>
+        <p class="section-desc">Smooth shape-shifting and dimensional transitions create visual continuity. Elements gracefully transform from one state to another.</p>
+      </div>
+      
+      <div class="morph-grid">
+        <div class="morph-card" data-scroll>
+          <div class="morph-visual">
+            <div class="morph-shape shape-circle" data-morph="square">
+              <div class="morph-inner">✦</div>
+            </div>
+          </div>
+          <h3>Circle to Square</h3>
+          <p>Smooth geometric transformation with continuous motion</p>
+        </div>
+        
+        <div class="morph-card" data-scroll>
+          <div class="morph-visual">
+            <div class="morph-shape shape-triangle" data-morph="hexagon">
+              <div class="morph-inner">◆</div>
+            </div>
+          </div>
+          <h3>Triangle to Hexagon</h3>
+          <p>Multi-point shape morphing with fluid transitions</p>
+        </div>
+        
+        <div class="morph-card" data-scroll>
+          <div class="morph-visual">
+            <div class="morph-shape shape-line" data-morph="wave">
+              <div class="morph-inner">∼</div>
+            </div>
+          </div>
+          <h3>Line to Wave</h3>
+          <p>Organic undulating transformations in motion</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === MASKING SECTION === -->
+  <section class="section mask-section" id="masking">
+    <div class="container">
+      <div class="section-header" data-scroll>
+        <span class="section-number">04</span>
+        <h2 class="section-title">Masking & Reveal</h2>
+        <p class="section-desc">Dynamic masks create sophisticated reveals and transitions. Elements emerge through clipping paths and gradient overlays.</p>
+      </div>
+      
+      <div class="mask-gallery" data-scroll>
+        <div class="mask-item" data-mask-type="circle">
+          <div class="mask-frame">
+            <div class="mask-media" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+            <div class="mask-overlay">
+              <span>Circle Reveal</span>
+            </div>
+          </div>
+        </div>
+        <div class="mask-item" data-mask-type="wipe">
+          <div class="mask-frame">
+            <div class="mask-media" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+            <div class="mask-overlay">
+              <span>Wipe Reveal</span>
+            </div>
+          </div>
+        </div>
+        <div class="mask-item" data-mask-type="diamond">
+          <div class="mask-frame">
+            <div class="mask-media" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+            <div class="mask-overlay">
+              <span>Diamond Reveal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === 3D TILT SECTION === -->
+  <section class="section" id="tilt">
+    <div class="container">
+      <div class="section-header" data-scroll>
+        <span class="section-number">05</span>
+        <h2 class="section-title">3D Dimensions</h2>
+        <p class="section-desc">Interactive 3D transformations add depth and tangibility. Move your cursor over the cards to feel the dimensionality.</p>
+      </div>
+      
+      <div class="tilt-grid">
+        <div class="tilt-card" data-scroll data-tilt>
+          <div class="tilt-inner">
+            <div class="tilt-icon">🌊</div>
+            <h3>Fluid Motion</h3>
+            <p>Continuous flowing movement with organic curves and smooth transitions</p>
+            <div class="tilt-shine"></div>
+          </div>
+        </div>
+        <div class="tilt-card" data-scroll data-tilt>
+          <div class="tilt-inner">
+            <div class="tilt-icon">⚡</div>
+            <h3>Kinetic Energy</h3>
+            <p>Dynamic bursts of motion that convey power and momentum in design</p>
+            <div class="tilt-shine"></div>
+          </div>
+        </div>
+        <div class="tilt-card" data-scroll data-tilt>
+          <div class="tilt-inner">
+            <div class="tilt-icon">🌀</div>
+            <h3>Spiral Dynamics</h3>
+            <p>Rotational movement creating hypnotic patterns with depth perception</p>
+            <div class="tilt-shine"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === SHOWCASE / GALLERY SECTION === -->
+  <section class="section showcase-section" id="showcase">
+    <div class="container">
+      <div class="section-header" data-scroll>
+        <span class="section-number">06</span>
+        <h2 class="section-title">Animation Showcase</h2>
+        <p class="section-desc">A curated gallery of animation techniques working together in harmony. Scroll through to see the full spectrum of motion design.</p>
+      </div>
+      
+      <div class="showcase-grid">
+        <div class="showcase-card" data-scroll>
+          <div class="showcase-visual">
+            <div class="showcase-anim float-anim">
+              <div class="showcase-dot dot-1"></div>
+              <div class="showcase-dot dot-2"></div>
+              <div class="showcase-dot dot-3"></div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <h3>Floating Orbs</h3>
+            <p>Autonomous floating animation with varied timing and paths</p>
+          </div>
+        </div>
+        
+        <div class="showcase-card" data-scroll>
+          <div class="showcase-visual">
+            <div class="showcase-anim pulse-anim">
+              <div class="pulse-ring"></div>
+              <div class="pulse-ring"></div>
+              <div class="pulse-ring"></div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <h3>Pulse Wave</h3>
+            <p>Radiating concentric rings with staggered delay timing</p>
+          </div>
+        </div>
+        
+        <div class="showcase-card" data-scroll>
+          <div class="showcase-visual">
+            <div class="showcase-anim stagger-anim">
+              <div class="stagger-bar"></div>
+              <div class="stagger-bar"></div>
+              <div class="stagger-bar"></div>
+              <div class="stagger-bar"></div>
+              <div class="stagger-bar"></div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <h3>Stagger Bars</h3>
+            <p>Offset timing creates a cascading wave effect across elements</p>
+          </div>
+        </div>
+        
+        <div class="showcase-card" data-scroll>
+          <div class="showcase-visual">
+            <div class="showcase-anim morph-ring-anim">
+              <div class="morph-ring"></div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <h3>Morphing Ring</h3>
+            <p>Continuous shape-shifting ring with color transitions</p>
+          </div>
+        </div>
+        
+        <div class="showcase-card" data-scroll>
+          <div class="showcase-visual">
+            <div class="showcase-anim orbit-anim">
+              <div class="orbit-center"></div>
+              <div class="orbit-ring"></div>
+              <div class="orbit-dot"></div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <h3>Orbit System</h3>
+            <p>Complex orbital motion with rotating paths and satellites</p>
+          </div>
+        </div>
+        
+        <div class="showcase-card" data-scroll>
+          <div class="showcase-visual">
+            <div class="showcase-anim glow-anim">
+              <div class="glow-core"></div>
+              <div class="glow-haze"></div>
+              <div class="glow-spark"></div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <h3>Glow Aura</h3>
+            <p>Radiating energy effect with pulsing luminosity and sparkles</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === FOOTER === -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-icon">✦</span>
+          <span class="logo-text">Motion</span>
+          <p>An interactive exploration of animation principles for the modern web.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Principles</h4>
+          <a href="#easing">Easing</a>
+          <a href="#parallax">Parallax</a>
+          <a href="#transform">Transform</a>
+          <a href="#masking">Masking</a>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <a href="#">GitHub</a>
+          <a href="#">Twitter</a>
+          <a href="#">Dribbble</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Motion. Crafted with care.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
